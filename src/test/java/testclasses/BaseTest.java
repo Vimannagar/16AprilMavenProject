@@ -11,12 +11,17 @@ import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LoginPage;
-import pages.LoginPageAdvance;
+import pages.SelectCityPage;
+import pages.SelectInsurer;
+import pages.SelectProductPage;
 import utility.ReadDataFromProperties;
 
 public class BaseTest {
 	public static WebDriver driver;
-	LoginPageAdvance lp;
+	SelectProductPage lp;
+	SelectCityPage sc;
+	
+	SelectInsurer si;
 	@BeforeSuite
 	public void initBrowser() throws IOException
 	{
@@ -45,7 +50,11 @@ public class BaseTest {
 	@BeforeClass
 	public void createObject()
 	{
-		lp = new LoginPageAdvance(driver);
+		lp = new SelectProductPage(driver);
+		
+		si = new SelectInsurer(driver);
+		
+		sc = new SelectCityPage(driver);
 	}
 	
 	@AfterSuite
