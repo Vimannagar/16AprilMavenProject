@@ -18,23 +18,23 @@ public class SelectCityPage {
 	
 	WebDriverWait wait;
 	@FindBy(xpath = "//*[@id='txtcity']")
-	WebElement citytextbox;
+	private WebElement citytextbox;
 
 	@FindBy(xpath = "//*[@id='divcitylist']")
-	WebElement cityname;
+	private WebElement cityname;
 
 	@FindBy(xpath = "//*[@id='fullname']")
-	WebElement fullname;
+	private WebElement fullname;
 	
 	
 	@FindBy(xpath = "//*[@id='pmobile']")
-	WebElement pmobilefield;
+	private WebElement pmobilefield;
 	
 
 	
 	
 	@FindBy(xpath = "//*[@type='submit']")
-	WebElement continuebutton;
+	private WebElement continuebutton;
 	
 
 	public SelectCityPage(WebDriver driver) {
@@ -65,6 +65,7 @@ public class SelectCityPage {
 		pmobilefield.sendKeys("9958445523");
 		
 		continuebutton.click();
+		System.out.println("abc");
 		
 		
 	}
